@@ -32,6 +32,7 @@ namespace KK_DiscordRPC
                 "643270");
 
             startstamp = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+            CheckInterval = 5;
             CheckStatus();
             Logger.LogInfo("Discord Rich Presense Started");
         }
@@ -50,22 +51,61 @@ namespace KK_DiscordRPC
             switch (KoikatuAPI.GetCurrentGameMode())
             {
                 case GameMode.Unknown:
-                    SetStatus("Koikatsu", "In Main Menu", "main", "Main Menu");
+                    SetStatus("Koikatsu", "Unkown Gamemode", "main", "Unknown");
                     break;
                 case GameMode.Maker:
-                    SetStatus("Koikatsu", "In Charactermaker", "main", "CharacterMaker");
+                    MakerStatus();
                     break;
                 case GameMode.Studio:
-                    SetStatus("CharaStudio", "In Studio", "studio", "CharaStudio");
+                    StudioStatus();
                     break;
                 case GameMode.MainGame:
-                    SetStatus("Koikatsu", "In Game", "studio", "Main Game");
+                    MainGameStatus();
                     break;
                 default:
                     SetStatus("Koikatsu", "Playing something", "studio", "Main game");
                     break;
             }
         }
+        void MakerStatus()
+        {
+            // SetStatus("Koikatsu", "In Charactermaker", "main", "CharacterMaker");
+            Boolean loaded = KKAPI.Maker.MakerAPI.InsideAndLoaded;
+            if (loaded is true)
+            {
+                ChaControl character = KKAPI.Maker.MakerAPI.GetCharacterControl();
+                string name = character.chaFile.parameter.fullname;
+                byte sex = character.sex;
+                Logger.LogInfo(name);
+                string status;
+                switch (sex) 
+                {
+                    case 0:
+                        status = "Maker (male)";
+                        break;
+                    case 1:
+                        status = "Maker (female)";
+                        break;
+                    default:
+                        status = "Charactermaker";
+                        break;
+                }
+                SetStatus(name, status, "studio", "CharacterMaker");
+            }
+            else
+            {
+                SetStatus("Koikatsu", "In Charactermaker", "studio", "CharacterMaker");
+            }
+        }
+        void StudioStatus()
+        {
+            SetStatus("CharaStudio", "In Studio", "main", "CharaStudio");
+        }
+        void MainGameStatus()
+        {
+            SetStatus("Koikatsu", "In Game", "studio", "Main Game");
+        }
+
         void SetStatus(string mode, string status, string img, string img_text)
         {
             prsnc.state = mode;

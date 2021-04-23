@@ -64,4 +64,7 @@
     <!-- the ILMergePath property points to the location of ILMerge.exe console application -->
     <Exec Command="$(ILMergeConsolePath) /out:Merged.dll discord-rpc.dll `C:\Users\Varkaria\Documents\GitHub\IllusionTrapMods-master\IllusionTrapMods-master\bin\KK_DiscordRPC.dll`" />
   </Target>
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetPath)" "F:\Steam\steamapps\common\Koikatsu Party\BepInEx\plugins\KK_DiscordRPC.dll"</PostBuildEvent>
+  </PropertyGroup>
 </Project>
