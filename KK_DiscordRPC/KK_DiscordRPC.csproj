@@ -52,7 +52,8 @@
     <Reference Include="BepInEx.Harmony">
       <HintPath>..\..\_Libs\BepInEx.Harmony.dll</HintPath>
     </Reference>
-    <Reference Include="KKAPI">
+    <Reference Include="KKAPI, Version=1.13.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\_Libs\KKAPI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
