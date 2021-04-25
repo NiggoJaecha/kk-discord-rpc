@@ -25,8 +25,8 @@ Right now you can choose between 4 images to show for each activity, but more im
 
 ## Installation
 
-1. Download the latest relase [here](https://github.com/NiggoJaecha/kk-discord-rpc/releases)
-2. Download the latest discord-rpc relase for Windows from [here](https://github.com/discord/discord-rpc)
+1. Download the latest release [here](https://github.com/NiggoJaecha/kk-discord-rpc/releases)
+2. Download the latest discord-rpc release for Windows from [here](https://github.com/discord/discord-rpc)
 3. Copy `discord-rpc.dll` from `discord-rpc-win\discord-rpc\win64-dynamic\bin` to your Koikatsu root folder (where the .exe files are)
 4. Drop `KK_DiscordRPC.dll` into `[Koikatsu Root]\BepInEx\plugins`
 5. Configure the Rich Presence inside the Game
