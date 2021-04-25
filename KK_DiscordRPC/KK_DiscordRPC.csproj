@@ -56,6 +56,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\_Libs\KKAPI.dll</HintPath>
     </Reference>
+    <Reference Include="Sideloader">
+      <HintPath>..\..\_Libs\Sideloader.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\..\_Libs\UnityEngine.dll</HintPath>
     </Reference>
