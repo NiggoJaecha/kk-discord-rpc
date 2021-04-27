@@ -3,7 +3,7 @@
 
 Version 1.1 Availible!
 
-Requires (newest version would be best) Version of KKAPI and Sideloader.
+Requires KKAPI and Sideloader.
 
 ## What this does
 
