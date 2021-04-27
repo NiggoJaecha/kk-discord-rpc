@@ -1,7 +1,7 @@
 
 # Koikatsu: Discord Rich Presence
 
-Alpha out now!
+Version 1.1 Availible!
 
 Requires (newest version would be best) Version of KKAPI and Sideloader.
 
