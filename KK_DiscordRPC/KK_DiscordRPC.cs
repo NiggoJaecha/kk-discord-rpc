@@ -124,7 +124,7 @@ namespace KK_DiscordRPC
 
             configBigImageMainGame = Config.Bind("Main Game", "Image", "logo_main", new ConfigDescription("Displayed image when in MainGame (everything but Maker and Studio).", pictures));
             configBigImageMainGameText = Config.Bind("Main Game", "Image Text", "Koikatsu", "Message to display when hovering the Image while in MainGame (everything but Maker and Studio)");
-            configActivityMessageMainGame = Config.Bind("Main Game", "Activity Message", "Ingame", "Actvity message to display when in main game but not H-Scene. Keywords: <plugin_count>, <mod_count>");
+            configActivityMessageMainGame = Config.Bind("Main Game", "Activity Message", "Ingame", "Activity message to display when in main game but not H-Scene. Keywords: <plugin_count>, <mod_count>");
             configStateMessageMainGame = Config.Bind("Main Game", "State Message", "<mod_count> Mods, <plugin_count> Plugins", "State message to display when in main game but not H-Scene. Keywords: <plugin_count>, <mod_count>");
 
             configBigImageUnknown = Config.Bind("Loading/Unknown", "Image", "logo_main", new ConfigDescription("Displayed image when gamemode is unknown (usually when the game is still starting/loading).", pictures));
@@ -163,7 +163,7 @@ namespace KK_DiscordRPC
             DiscordRPC.Initialize(
                 "835112124295806987",
                 ref handlers,
-                false, "");
+                false, string.Empty);
 
             startStamp = CurrentUnixStamp();
  
