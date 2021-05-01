@@ -32,4 +32,4 @@ using KK_DiscordRPC;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion(Koi_DiscordRPC.Version)]
+[assembly: AssemblyVersion(KoiDiscordRpc.Version)]
