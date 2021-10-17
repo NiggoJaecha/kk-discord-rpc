@@ -18,7 +18,7 @@ namespace KK_DiscordRPC
     public class Koi_DiscordRPC : BaseUnityPlugin
     {
         public const string GUID = "com.varkaria.njaecha.KK_DiscordRPC";
-        public const string Version = "1.1.0";
+        public const string Version = "1.1.1";
 
         internal static DiscordRPC.RichPresence prsnc;
         internal new static ManualLogSource Logger;
@@ -348,15 +348,17 @@ namespace KK_DiscordRPC
                             freeH = hBoolFreeHFalse.Value;
                             break;
                     }
-                    switch (hproc.dataH.isDarkness)
-                    {
-                        case true:
-                            darkness = hBoolDarknessTrue.Value;
-                            break;
-                        case false:
-                            darkness = hBoolDarknessFalse.Value;
-                            break;
-                    }
+                    if (KoikatuAPI.IsDarkness())
+                        switch (hproc.dataH.isDarkness)
+                        {
+                            case true:
+                                darkness = hBoolDarknessTrue.Value;
+                                break;
+                            case false:
+                                darkness = hBoolDarknessFalse.Value;
+                                break;
+                        }
+                    
                     switch (hproc.flags.mode)
                     {
                         case HFlag.EMode.aibu:
